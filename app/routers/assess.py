@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Query, HTTPException
 from typing import Optional
-from models import ResourceAssessmentRequest
-from data import utils
-from helpers import docker_executor
+from app.models import ResourceAssessmentRequest
+from app.data import utils
+from app.helpers import docker_executor
 
 router = APIRouter(prefix="/assess", tags=["api-controller"])
 
