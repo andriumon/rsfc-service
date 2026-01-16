@@ -11,16 +11,29 @@ A REST API to call RSFC (Research Software FAIRness Checks) via requests.
 - GET /tests/{testid}
 - POST /assess/test/{test_identifier}
 
+# Requirements
+
+The API was developed using Python 3.12.0
+
+Dependencies are available in the requirements.txt file located in the root of the repository
+
+# Install from Github
+
+Simply clone this repository
+
+```
+git clone https://github.com/oeg-upm/rsfc-service.git
+```
 
 ## Usage
 
-Preferably in a virtual environment and inside the app/ directory, run the following to run the app:
+Preferably in a virtual environment and in the root directory of the project, run the following to run the app:
 
 ```
-uvicorn main:app
+uvicorn app.main:app
 ```
 
-**Note**: The application will try to pull the docker image for RSFC, which is strictly necessary.
+The application will try to pull the docker image for RSFC, which is strictly necessary. Said image can be found on [DockerHub](https://hub.docker.com/r/amonterodx/rsfc)
 
 After the preparations are done, you can perform requests to the API. Here are some examples:
 
