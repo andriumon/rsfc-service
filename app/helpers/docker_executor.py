@@ -39,7 +39,6 @@ async def run_assessment(resource_identifier, test_id):
         ]
         
         if test_id != None:
-            test_id = test_id.rstrip("/").split("/")[-1]
             cmd.extend(["--id", test_id])
 
         subprocess.run(cmd, capture_output=True, text=True)

@@ -40,7 +40,7 @@ After the preparations are done, you can perform requests to the API. Here are s
 - Fetch a benchmark using its id
 
 ```
-curl -G "http://localhost:8000/benchmarks/benchmarkid=https://w3id.org/rsfc/benchmark/FAIR4RS" \
+curl -G "http://localhost:8000/benchmarks?benchmarkid=https://w3id.org/rsfc/benchmark/FAIR4RS" \
   -H "Accept: application/ld+json"
 
 ```
@@ -48,14 +48,14 @@ curl -G "http://localhost:8000/benchmarks/benchmarkid=https://w3id.org/rsfc/benc
 - Fetch a metric using its id
 
 ```
-curl -G "http://localhost:8000/metrics/metricid=https://w3id.org/everse/i/indicators/software_has_license" \
+curl -G "http://localhost:8000/metrics?metricid=https://w3id.org/everse/i/indicators/software_has_license" \
   -H "Accept: application/ld+json"
 ```
 
 - Fetch a test using its id
 
 ```
-curl -G "http://localhost:8000/tests/testid=https://w3id.org/rsfc/test/RSFC-01-1" \
+curl -G "http://localhost:8000/tests?testid=https://w3id.org/rsfc/test/RSFC-01-1" \
   -H "Accept: application/ld+json"
 
 ```
@@ -63,7 +63,7 @@ curl -G "http://localhost:8000/tests/testid=https://w3id.org/rsfc/test/RSFC-01-1
 - Perform an assessment on a repository for a certain test
 
 ```
-curl -X POST "http://localhost:8000/assess/test/https://w3id.org/rsfc/test/RSFC-13-1" \
+curl -X POST "http://localhost:8000/assess/test/RSFC-13-1" \
   -H "Content-Type: application/json" \
   -d '{
     "resource_identifier": "https://github.com/oeg-upm/rsfc"

@@ -20,49 +20,6 @@ BENCHMARK_IDENTIFIERS = [
 ]
 
 
-RSFC_01_1 = "https://w3id.org/rsfc/test/RSFC-01-1"
-RSFC_01_2 = "https://w3id.org/rsfc/test/RSFC-01-2"
-RSFC_01_3 = "https://w3id.org/rsfc/test/RSFC-01-3"
-RSFC_03_1 = "https://w3id.org/rsfc/test/RSFC-03-1"
-RSFC_03_2 = "https://w3id.org/rsfc/test/RSFC-03-2"
-RSFC_03_3 = "https://w3id.org/rsfc/test/RSFC-03-3"
-RSFC_03_4 = "https://w3id.org/rsfc/test/RSFC-03-4"
-RSFC_03_5 = "https://w3id.org/rsfc/test/RSFC-03-5"
-RSFC_03_6 = "https://w3id.org/rsfc/test/RSFC-03-6"
-RSFC_04_1 = "https://w3id.org/rsfc/test/RSFC-04-1"
-RSFC_04_2 = "https://w3id.org/rsfc/test/RSFC-04-2"
-RSFC_04_3 = "https://w3id.org/rsfc/test/RSFC-04-3"
-RSFC_04_4 = "https://w3id.org/rsfc/test/RSFC-04-4"
-RSFC_04_5 = "https://w3id.org/rsfc/test/RSFC-04-5"
-RSFC_05_1 = "https://w3id.org/rsfc/test/RSFC-05-1"
-RSFC_05_2 = "https://w3id.org/rsfc/test/RSFC-05-2"
-RSFC_05_3 = "https://w3id.org/rsfc/test/RSFC-05-3"
-RSFC_06_1 = "https://w3id.org/rsfc/test/RSFC-06-1"
-RSFC_06_2 = "https://w3id.org/rsfc/test/RSFC-06-2"
-RSFC_06_3 = "https://w3id.org/rsfc/test/RSFC-06-3"
-RSFC_06_4 = "https://w3id.org/rsfc/test/RSFC-06-4"
-RSFC_07_1 = "https://w3id.org/rsfc/test/RSFC-07-1"
-RSFC_07_2 = "https://w3id.org/rsfc/test/RSFC-07-2"
-RSFC_08_1 = "https://w3id.org/rsfc/test/RSFC-08-1"
-RSFC_09_1 = "https://w3id.org/rsfc/test/RSFC-09-1"
-RSFC_12_1 = "https://w3id.org/rsfc/test/RSFC-12-1"
-RSFC_13_1 = "https://w3id.org/rsfc/test/RSFC-13-1"
-RSFC_13_2 = "https://w3id.org/rsfc/test/RSFC-13-2"
-RSFC_13_3 = "https://w3id.org/rsfc/test/RSFC-13-3"
-RSFC_13_4 = "https://w3id.org/rsfc/test/RSFC-13-4"
-RSFC_14_1 = "https://w3id.org/rsfc/test/RSFC-14-1"
-RSFC_14_2 = "https://w3id.org/rsfc/test/RSFC-14-2"
-RSFC_15_1 = "https://w3id.org/rsfc/test/RSFC-15-1"
-RSFC_15_2 = "https://w3id.org/rsfc/test/RSFC-15-2"
-RSFC_15_3 = "https://w3id.org/rsfc/test/RSFC-15-3"
-RSFC_16_1 = "https://w3id.org/rsfc/test/RSFC-16-1"
-RSFC_17_1 = "https://w3id.org/rsfc/test/RSFC-17-1"
-RSFC_17_2 = "https://w3id.org/rsfc/test/RSFC-17-2"
-RSFC_17_3 = "https://w3id.org/rsfc/test/RSFC-17-3"
-RSFC_18_1 = "https://w3id.org/rsfc/test/RSFC-18-1"
-RSFC_19_1 = "https://w3id.org/rsfc/test/RSFC-19-1"
-
-
 METRIC_IDENTIFIERS = [
     PERSISTENT_ID,
     HAS_RELEASES,
@@ -80,45 +37,46 @@ METRIC_IDENTIFIERS = [
 
 
 TEST_IDENTIFIERS = [
-    RSFC_01_1,
-    RSFC_01_2,
-    RSFC_01_3,
-    RSFC_03_1,
-    RSFC_03_2,
-    RSFC_03_3,
-    RSFC_03_4,
-    RSFC_03_5,
-    RSFC_03_6,
-    RSFC_04_1,
-    RSFC_04_2,
-    RSFC_04_3,
-    RSFC_04_4,
-    RSFC_04_5,
-    RSFC_05_1,
-    RSFC_05_2,
-    RSFC_05_3,
-    RSFC_06_1,
-    RSFC_06_2,
-    RSFC_06_3,
-    RSFC_06_4,
-    RSFC_07_1,
-    RSFC_07_2,
-    RSFC_08_1,
-    RSFC_09_1,
-    RSFC_12_1,
-    RSFC_13_1,
-    RSFC_13_2,
-    RSFC_13_3,
-    RSFC_13_4,
-    RSFC_14_1,
-    RSFC_14_2,
-    RSFC_15_1,
-    RSFC_15_2,
-    RSFC_15_3,
-    RSFC_16_1,
-    RSFC_17_1,
-    RSFC_17_2,
-    RSFC_17_3,
-    RSFC_18_1,
-    RSFC_19_1
+    "RSFC-01-1",
+    "RSFC-01-2",
+    "RSFC-01-3",
+    "RSFC-03-1",
+    "RSFC-03-2",
+    "RSFC-03-3",
+    "RSFC-03-4",
+    "RSFC-03-5",
+    "RSFC-03-6",
+    "RSFC-04-1",
+    "RSFC-04-2",
+    "RSFC-04-3",
+    "RSFC-04-4",
+    "RSFC-04-5",
+    "RSFC-05-1",
+    "RSFC-05-2",
+    "RSFC-05-3",
+    "RSFC-06-1",
+    "RSFC-06-2",
+    "RSFC-06-3",
+    "RSFC-06-4",
+    "RSFC-07-1",
+    "RSFC-07-2",
+    "RSFC-08-1",
+    "RSFC-09-1",
+    "RSFC-12-1",
+    "RSFC-13-1",
+    "RSFC-13-2",
+    "RSFC-13-3",
+    "RSFC-13-4",
+    "RSFC-14-1",
+    "RSFC-14-2",
+    "RSFC-15-1",
+    "RSFC-15-2",
+    "RSFC-15-3",
+    "RSFC-16-1",
+    "RSFC-17-1",
+    "RSFC-17-2",
+    "RSFC-17-3",
+    "RSFC-18-1",
+    "RSFC-19-1",
+    "RSFC-20-1"
 ]
