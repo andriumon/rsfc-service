@@ -15,3 +15,9 @@ async def post_test_assessment(test_identifier: str = Path(..., description="Ide
         return await docker_executor.run_assessment(body.resource_identifier, test_identifier)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.get("/test/{test_identifier:path}")
+async def get_test_assessment(test_identifier: str = Path(..., description="Dummy method for browser petition"), body: ResourceAssessmentRequest = ...):
+    msg = "Please send a POST request. Example: curl -X POST \"http://localhost:8000/assess/test/RSFC-13-1\" -H \"Content-Type: application/json\" -d '{\"resource_identifier\": \"https://github.com/oeg-upm/rsfc\"}'"
+    return await msg
