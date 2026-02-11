@@ -19,7 +19,7 @@ async def pull_docker_image():
     print("Image pulled succesfully")
 
 
-async def run_assessment(resource_identifier, test_id):
+async def run_assessment(resource_identifier, test_id, github_token):
     
     print("Running RSFC container")
     
@@ -38,22 +38,29 @@ async def run_assessment(resource_identifier, test_id):
             "--ftr"
         ]
         
-        if test_id != None:
+        if test_id is not None:
             cmd.extend(["--id", test_id])
+            
+        cmd.extend(["-t", github_token])
 
-        subprocess.run(cmd, capture_output=True, text=True)
+        subprocess.run(cmd, capture_output=True, text=True, check=True)
         
         files = os.listdir(tempdir)
-        if len(files) != 1:
-            print("Error: RSFC did not generate any output files")
-            raise
 
-        report_path = os.path.join(tempdir, files[0])
+        report_filename = "rsfc_assessment.json"
+        if report_filename not in files:
+            raise RuntimeError(
+                f"{report_filename} not found in RSFC output directory. "
+                f"Files generated: {files}"
+            )
+
+        report_path = os.path.join(tempdir, report_filename)
+        
         with open(report_path) as f:
             report = json.load(f)
         
         return report
 
-
     except Exception as e:
         raise Exception(f"Error while running the container: {e}")
+
