@@ -40,7 +40,7 @@ After the preparations are done, you can perform requests to the API. Here are s
 - Fetch a benchmark using its id
 
 ```
-curl -G "http://localhost:8000/benchmarks?benchmark_id=https://w3id.org/rsfc/benchmark/FAIR4RS" \
+curl -G "http://localhost:8000/benchmarks?benchmarkid=https://w3id.org/rsfc/benchmark/FAIR4RS" \
   -H "Accept: application/ld+json"
 
 ```
@@ -48,14 +48,14 @@ curl -G "http://localhost:8000/benchmarks?benchmark_id=https://w3id.org/rsfc/ben
 - Fetch a metric using its id
 
 ```
-curl -G "http://localhost:8000/metrics?metric_id=https://w3id.org/everse/i/indicators/software_has_license" \
+curl -G "http://localhost:8000/metrics?metricid=https://w3id.org/everse/i/indicators/software_has_license" \
   -H "Accept: application/ld+json"
 ```
 
 - Fetch a test using its id
 
 ```
-curl -G "http://localhost:8000/tests?test_id=https://w3id.org/rsfc/test/RSFC-01-1" \
+curl -G "http://localhost:8000/tests?testid=https://w3id.org/rsfc/test/RSFC-01-1" \
   -H "Accept: application/ld+json"
 
 ```
