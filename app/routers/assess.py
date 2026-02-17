@@ -7,20 +7,13 @@ router = APIRouter(prefix="/assess", tags=["api-controller"])
 
 
 @router.post("/test/{test_identifier:path}")
-async def post_test_assessment(test_identifier: str = Path(..., description="Identifier of the test to run"), body: ResourceAssessmentRequest = ..., authorization: str = Header(..., description="Bearer GitHub token")):
+async def post_test_assessment(test_identifier: str = Path(..., description="Identifier of the test to run"), body: ResourceAssessmentRequest = ...):
     if test_identifier not in utils.TEST_IDENTIFIERS:
         raise HTTPException(status_code=404, detail="Test not found")
 
-    if not authorization.startswith("Bearer "):
-        raise HTTPException(status_code=401, detail="Invalid Authorization header format")
-
-    github_token = authorization.split(" ", 1)[1]
-
-    if not github_token:
-        raise HTTPException(status_code=401, detail="Empty token")
-
     try:
-        return await docker_executor.run_assessment(body.resource_identifier, test_identifier, github_token)
+        short_id = test_identifier.rstrip("/").rsplit("/", 1)[-1]
+        return await docker_executor.run_assessment(body.resource_identifier, short_id)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -37,20 +30,11 @@ async def get_test_assessment(
     }
     
     
-@router.post("/benchmarkScore")
-async def post_test_assessment(body: ResourceAssessmentRequest = ..., authorization: str = Header(..., description="Bearer GitHub token")):
-
-
-    if not authorization.startswith("Bearer "):
-        raise HTTPException(status_code=401, detail="Invalid Authorization header format")
-
-    github_token = authorization.split(" ", 1)[1]
-
-    if not github_token:
-        raise HTTPException(status_code=401, detail="Empty token")
+@router.post("/scoringAlgorithm")
+async def post_test_assessment(body: ResourceAssessmentRequest = ...):
 
     try:
-        assessment = await docker_executor.run_assessment(body.resource_identifier, None, github_token)
+        assessment = await docker_executor.run_assessment(body.resource_identifier, None)
         
         test_results = assessment["hadMember"]
         

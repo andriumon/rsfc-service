@@ -19,7 +19,18 @@ async def pull_docker_image():
     print("Image pulled succesfully")
 
 
-async def run_assessment(resource_identifier, test_id, github_token):
+async def run_assessment(resource_identifier, test_id):
+    
+    github_token = None
+    config_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "../config.json")
+
+    if os.path.isfile(config_path):
+        try:
+            with open(config_path) as f:
+                config = json.load(f)
+                github_token = config.get("github_token")
+        except Exception as e:
+            print(f"Warning: could not read config.json ({e}), proceeding without github token")
     
     print("Running RSFC container")
     
@@ -41,7 +52,8 @@ async def run_assessment(resource_identifier, test_id, github_token):
         if test_id is not None:
             cmd.extend(["--id", test_id])
             
-        cmd.extend(["-t", github_token])
+        if github_token:
+            cmd.extend(["-t", github_token])
 
         subprocess.run(cmd, capture_output=True, text=True, check=True)
         
