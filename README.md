@@ -64,8 +64,6 @@ curl -G "http://localhost:8000/tests?testid=https://w3id.org/rsfc/test/RSFC-01-1
 
 - Perform an assessment on a repository for a certain test
 
-**Note**: The use of a Github token is mandatory for this request.
-
 ```
 curl -X POST "http://localhost:8000/assess/test/RSFC-13-1" \
   -H "Content-Type: application/json" \
