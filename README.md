@@ -65,7 +65,7 @@ curl -G "http://localhost:8000/tests?testid=https://w3id.org/rsfc/test/RSFC-01-1
 - Perform an assessment on a repository for a certain test
 
 ```
-curl -X POST "http://localhost:8000/assess/test/RSFC-13-1" \
+curl -X POST "http://localhost:8000/assess/test/https://w3id.org/rsfc/test/RSFC-13-1" \
   -H "Content-Type: application/json" \
   -d '{
     "resource_identifier": "https://github.com/oeg-upm/rsfc"
