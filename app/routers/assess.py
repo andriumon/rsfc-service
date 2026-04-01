@@ -6,7 +6,7 @@ from app.helpers import docker_executor, render_template
 router = APIRouter(prefix="/assess", tags=["api-controller"])
 
 
-@router.post("/test/{test_identifier:path}")
+@router.post("/test/{test_identifier:path}", description="Runs a RSFC test on a resource following the FTR specification")
 async def post_test_assessment(test_identifier: str = Path(..., description="Identifier of the test to run"), body: ResourceAssessmentRequest = ...):
     if test_identifier not in utils.TEST_IDENTIFIERS and test_identifier not in utils.TEST_SHORTIDS:
         raise HTTPException(status_code=404, detail="Test not found")
@@ -32,7 +32,7 @@ async def get_test_assessment(
     }
     
     
-@router.post("/scoringAlgorithm")
+@router.post("/scoringAlgorithm", description="Assesses a resource against a RSFC set of tests following the FTR format")
 async def post_test_assessment(body: ResourceAssessmentRequest = ...):
 
     try:

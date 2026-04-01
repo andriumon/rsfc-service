@@ -8,7 +8,7 @@ router = APIRouter(prefix="/metrics", tags=["api-controller"])
 
 
 
-@router.get("")
+@router.get("", description="Returns the specified metric's metadata. If no specified metric, returns the available metrics instead")
 async def get_metric(metricid: Optional[str] = Query(None, description="Metric ID to fetch")):
     
     if metricid == None:

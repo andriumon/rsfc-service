@@ -6,7 +6,7 @@ from app.helpers.fetcher import fetch_json
 router = APIRouter(prefix="/benchmarks", tags=["api-controller"])
 
 
-@router.get("")
+@router.get("", description="Returns the specified benchmark's metadata. If no specified benchmark, returns the available benchmarks instead")
 async def get_benchmark(benchmarkid: Optional[str] = Query(None, description="Benchmark ID")):
     
     if benchmarkid == None:

@@ -7,7 +7,7 @@ from app.helpers.fetcher import fetch_json
 router = APIRouter(prefix="/tests", tags=["api-controller"])
 
 
-@router.get("")
+@router.get("", description="Returns the specified test's metadata. If no specified test, returns the available tests instead")
 async def get_test(testid: Optional[str] = Query(None, description="Test ID to fetch (optional)")):
 
     if testid == None:
