@@ -11,10 +11,7 @@ router = APIRouter(prefix="/tests", tags=["api-controller"])
 async def get_test(testid: Optional[str] = Query(None, description="Test ID to fetch (optional)")):
 
     if testid == None:
-        return {
-            "available_tests": utils.TEST_IDENTIFIERS,
-            "note": "Additionally, you can use the short version of these identifiers (i.e. RSFC-01-2)"
-        }
+        return utils.TEST_IDENTIFIERS
 
     if testid not in utils.TEST_IDENTIFIERS:
         raise HTTPException(status_code=404, detail="Test not found")

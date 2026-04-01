@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Path, HTTPException, Header
+from fastapi import APIRouter, Path, HTTPException
 from app.models import ResourceAssessmentRequest
 from app.data import utils
 from app.helpers import docker_executor, render_template
@@ -22,7 +22,7 @@ async def post_test_assessment(test_identifier: str = Path(..., description="Ide
 
 @router.get("/test/{test_identifier:path}")
 async def get_test_assessment(
-    test_identifier: str = Path(..., description="Dummy method for browser GET petition")
+    test_identifier: str = Path(..., description="Method that returns how to do a POST request to /assess/test/{test_identifier}")
 ):
     return {
         "message": "This endpoint only accepts POST requests.",

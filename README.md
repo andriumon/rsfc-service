@@ -79,6 +79,8 @@ curl -X POST "http://localhost:8000/assess/test/https://w3id.org/rsfc/test/RSFC-
   }'
 ```
 
+**Note**: For this request you can use the shortID version of the test identifier (i.e. RSFC-13-1)
+
 - Perform an assessment on a repository for all the tests
 
 ```
